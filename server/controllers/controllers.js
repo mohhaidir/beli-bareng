@@ -47,7 +47,7 @@ class Controller {
     )
       .then(data => {
         Todo.find({}).then(data => {
-          res.status(200).json(data);
+          res.status(200).json({ message: "Successfully Update Todo!" });
         });
       })
       .catch(err => {
@@ -59,14 +59,14 @@ class Controller {
     const id = req.params.id;
     Todo.findByIdAndRemove(id)
       .then(data => {
-        res.status(200).json({ message: "Successfully Delete Todo!" });
+        if (data) {
+          res.status(200).json({ message: "Successfully Delete Todo!", data });
+        } else {
+          res.status(404).json({ message: "Delete Failed due ID not Found!" });
+        }
       })
       .catch(err => {
-        if (err.value) {
-          res.status(404).json({ message: "Delete Failed due ID not Found!" });
-        } else {
-          res.status(500).json(err);
-        }
+        res.status(500).json(err);
       });
   }
 }
