@@ -2,10 +2,10 @@ const router = require("express").Router();
 const Controller = require("../controllers/controllers");
 
 router
-  .get("/", Controller.getTodo)
-  .post("/", Controller.addTodo)
-  .get("/:id", Controller.findById)
-  .put("/:id", Controller.putById)
-  .delete("/:id", Controller.destroy);
+  .get("/todo", Controller.getTodo)
+  .post("/todo", Controller.addTodo)
+  .get("/todo/:id", Controller.findById)
+  .put("/todo/:id", Controller.putById)
+  .delete("/todo/:id", Controller.destroy);
 
 module.exports = router;

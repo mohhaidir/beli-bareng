@@ -1,17 +1,16 @@
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 
-app.use(bodyParser.urlencoded({ useNewUrlParser: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 const dbConfig = require("./config/database.config.js");
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 mongoose
-  .connect(dbConfig.url, { useUnifiedTopology: true })
+  .connect(dbConfig.url, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Successfully Connect to Database");
   })

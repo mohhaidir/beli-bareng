@@ -4,15 +4,21 @@ class Controller {
   static getTodo(req, res) {
     Todo.find({})
       .then(result => {
-        res.json(result.docs);
+        res.status(200).json(result);
       })
       .catch(err => {
-        res.json(err);
+        res.status(500).json(err);
       });
   }
 
   static addTodo(req, res) {
-    Todo.create(req.body).then(data => res.json(data));
+    Todo.create(req.body)
+      .then(data => {
+        res.status(201).json(data);
+      })
+      .catch(err => {
+        res.status(500).json(err);
+      });
   }
 
   static findById(req, res) {
