@@ -22,7 +22,17 @@ class Controller {
   }
 
   static findById(req, res) {
-    Todo.findById({ _id: req.params.id }).then(data => res.json(data));
+    Todo.findById({ _id: req.params.id })
+      .then(data => {
+        res.status(200).json(data);
+      })
+      .catch(err => {
+        if (err.value) {
+          res.status(404).json({ message: "Todo Not Found!" });
+        } else {
+          res.status(500).json(err);
+        }
+      });
   }
 
   static putById(req, res) {
@@ -30,18 +40,34 @@ class Controller {
       { _id: req.params.id },
       {
         $set: {
-          name: req.body.nama,
+          name: req.body.name,
           description: req.body.description
         }
       }
-    ).then(data => {
-      Todo.find({}).then(data => res.json(data));
-    });
+    )
+      .then(data => {
+        Todo.find({}).then(data => {
+          res.status(200).json(data);
+        });
+      })
+      .catch(err => {
+        res.status(500).json(err);
+      });
   }
 
   static destroy(req, res) {
     const id = req.params.id;
-    Todo.findByIdAndRemove(id).then(data => res.json("Succesfully"));
+    Todo.findByIdAndRemove(id)
+      .then(data => {
+        res.status(200).json({ message: "Successfully Delete Todo!" });
+      })
+      .catch(err => {
+        if (err.value) {
+          res.status(404).json({ message: "Delete Failed due ID not Found!" });
+        } else {
+          res.status(500).json(err);
+        }
+      });
   }
 }
 
