@@ -1,11 +1,11 @@
-export const getTodo = () => {
+export const getTodos = () => {
   return dispatch => {
-    fetch("https://secure-cove-72475.herokuapp.com")
+    fetch("http://localhost:3001/todo")
       .then(res => res.json())
-      .then(todo => {
+      .then(todos => {
         dispatch({
-          type: "GET_TODO",
-          payload: todo
+          type: "GET_TODOS",
+          payload: todos
         });
       });
   };

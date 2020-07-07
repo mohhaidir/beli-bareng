@@ -1,7 +1,7 @@
 import React from "react";
-// import { Provider } from "react-redux";
+import { Provider } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import store from "./store";
+import store from "./store";
 import { Header } from "./components";
 import { Home } from "./pages";
 
@@ -24,17 +24,17 @@ const NoMatch = ({ location }) => (
 
 const App = () => {
   return (
-    // <Provider>
-    <Router>
-      <Header />
-      <Switch>
-        {routes.map(route => (
-          <Route key={route} {...route} />
-        ))}
-        <Route component={NoMatch} />
-      </Switch>
-    </Router>
-    // </Provider>
+    <Provider store={store}>
+      <Router>
+        <Header />
+        <Switch>
+          {routes.map(route => (
+            <Route key={route} {...route} />
+          ))}
+          <Route component={NoMatch} />
+        </Switch>
+      </Router>
+    </Provider>
   );
 };
 
