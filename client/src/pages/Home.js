@@ -1,56 +1,29 @@
-import React, { useEffect } from "react";
-import { Card } from "../components";
-import { useDispatch, useSelector } from "react-redux";
-import { getTodos } from "../store/action/action";
+import React from "react";
+import homePic from "../assets/home-pic.png";
 
 export default function Home() {
-  const dispatch = useDispatch();
-  const { todos } = useSelector(state => state.todoListReducer);
-
-  useEffect(() => {
-    dispatch(getTodos());
-  }, [dispatch]);
-
   return (
     <div>
-      {/* <h1>home will show card with all todo list</h1> */}
-      {/* {<div>{JSON.stringify(todos)}</div>} */}
-      <div style={styles.allCard}>
-        {todos.length !== 0 ? (
-          todos.map(e => {
-            return (
-              <div key={e._id}>
-                <Card todo={e} key={e._id} />
-              </div>
-            );
-          })
-        ) : (
-          <div style={styles.load}>
-            <img style={styles.object} src="/confused.gif" alt="loading..." />
-          </div>
-        )}
+      <img style={styles.pic} src={homePic} alt="none..." />
+      <div style={styles.title}>
+        <h1 style={styles.text}>Welcome To Todo List App</h1>
       </div>
     </div>
   );
 }
 
 const styles = {
-  allCard: {
-    justifyContent: "center",
-    display: "flex",
-    flexDirection: "row",
+  title: {
+    textAlign: "center",
+    margin: "40px"
+  },
+  text: {
+    fontFamily: "Fondamento"
+  },
+  pic: {
     position: "relative",
-    flexWrap: "wrap",
-    margin: "20px"
-  },
-  load: {
-    justifyContent: "center",
-    width: "70px",
-    margin: "300px",
-    marginLeft: "210%"
-  },
-  object: {
-    width: "170%",
-    height: "170%"
+    marginTop: "9%",
+    width: "20%",
+    marginLeft: "39%"
   }
 };

@@ -6,10 +6,14 @@ const dbConfig = require("./config/database.config.js");
 const mongoose = require("mongoose");
 const router = require("./routers");
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(cors());
-app.use(router);
+app
+  .use(express.urlencoded({ extended: true }))
+  .use(express.json())
+  .use(cors())
+  .use(router)
+  .listen(PORT, () => {
+    console.log(`SERVER RUNNING ON PORT : ${PORT}`);
+  });
 
 mongoose.Promise = global.Promise;
 mongoose
@@ -21,7 +25,3 @@ mongoose
     console.log("Can't Connect to Database!");
     process.exit();
   });
-
-app.listen(PORT, () => {
-  console.log(`SERVER RUNNING ON PORT : ${PORT}`);
-});

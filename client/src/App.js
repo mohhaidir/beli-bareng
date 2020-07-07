@@ -3,13 +3,25 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import store from "./store";
 import { Header } from "./components";
-import { Home } from "./pages";
+import { Todos, Home, AddTodo, EditTodo } from "./pages";
 
 const routes = [
   {
     exact: true,
     path: "/",
     children: <Home />
+  },
+  {
+    path: "/todos",
+    children: <Todos />
+  },
+  {
+    path: "/addTodo",
+    children: <AddTodo />
+  },
+  {
+    path: "/editTodo/:id",
+    children: <EditTodo />
   }
 ];
 
