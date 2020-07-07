@@ -28,7 +28,22 @@ export const addTodoAction = data => {
   };
 };
 
-export const editTodoAction = data => {};
+export const editTodoAction = (data, id) => {
+  return dispatch => {
+    fetch(`http://localhost:3001/todo/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    })
+      .then(res => res.json())
+      .then(todo => {
+        dispatch({
+          type: "EDIT_TODOS",
+          payload: todo
+        });
+      });
+  };
+};
 
 export const deleteTodo = id => {
   return (dispatch, getState) => {

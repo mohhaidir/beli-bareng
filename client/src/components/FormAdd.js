@@ -16,8 +16,8 @@ export default function FormAdd(props) {
             type="text"
             placeholder="Enter Todo's Name"
           />
-          <Form.Text className="text-muted">
-            Input Your Todo Such as Category
+          <Form.Text style={{ marginLeft: "3px" }} className="text-muted">
+            Input Your Todo Such as Category, etc.
           </Form.Text>
         </Form.Group>
 
@@ -29,12 +29,14 @@ export default function FormAdd(props) {
             placeholder="Enter Todo's Description"
             as="textarea"
             rows="5"
-            maxlength="200"
+            maxlength="150"
           />
-          <Form.Text className="text-muted">Max. 200 Character</Form.Text>
+          <Form.Text style={{ marginLeft: "3px" }} className="text-muted">
+            Max. 150 Character
+          </Form.Text>
         </Form.Group>
         <Button
-          style={{ height: "40px" }}
+          style={{ height: "40px", fontSize: "20px", fontWeight: "500" }}
           onClick={e => props.onAddSubmit(e)}
           variant="warning"
           type="submit"

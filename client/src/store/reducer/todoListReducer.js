@@ -10,6 +10,8 @@ const todoListReducer = (state = initialState, action) => {
       return { ...state, todos: action.payload };
     case "ADD_TODO":
       return { ...state, todo: action.payload };
+    case "EDIT_TODO":
+      return { ...state, todo: action.payload };
     default:
       return state;
   }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 
-export default function FormEdit() {
+export default function FormEdit(props) {
   return (
     <div>
       {/* <div>FORM WILL SHOW HERE</div> */}
@@ -11,24 +11,33 @@ export default function FormEdit() {
       <Form style={styles.add}>
         <Form.Group controlId="formBasicName">
           <Form.Label style={{ fontSize: "23px" }}>Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter Todo's Name" />
-          <Form.Text className="text-muted">
-            Edit Your Todo Such as Category
+          <Form.Control
+            value={props.name}
+            onChange={e => props.setName(e.target.value)}
+            type="text"
+          />
+          <Form.Text style={{ marginLeft: "3px" }} className="text-muted">
+            Edit Your Todo Such as Category, etc.
           </Form.Text>
         </Form.Group>
 
         <Form.Group controlId="formBasicDescription">
           <Form.Label style={{ fontSize: "23px" }}>Description</Form.Label>
           <Form.Control
+            value={props.description}
+            onChange={e => props.setDescription(e.target.value)}
             type="Text"
-            placeholder="Enter Todo's Description"
             as="textarea"
             rows="5"
+            maxlength="150"
           />
-          <Form.Text className="text-muted">Max. 200 Character</Form.Text>
+          <Form.Text style={{ marginLeft: "3px" }} className="text-muted">
+            Max. 150 Character
+          </Form.Text>
         </Form.Group>
         <Button
-          style={{ height: "40px" }}
+          onClick={props.onEditSubmit}
+          style={{ height: "40px", fontSize: "20px", fontWeight: "500" }}
           variant="warning"
           type="submit"
           size="sm"

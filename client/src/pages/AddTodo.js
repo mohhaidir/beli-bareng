@@ -12,8 +12,7 @@ export default function AddTodo() {
   const history = useHistory();
 
   const onAddSubmit = e => {
-    if (name.length !== 0 && description.length !== 0) {
-      e.preventDefault();
+    if (name && description) {
       const dataInput = {
         name,
         description
@@ -22,7 +21,11 @@ export default function AddTodo() {
       history.push("/todos");
       swal("Success!", "", "success");
     } else {
-      swal("Nah!", "All field cannot be empty!", "warning");
+      swal({
+        title: "Nah!",
+        text: "All field cannot be empty!",
+        icon: "warning"
+      });
     }
   };
 
