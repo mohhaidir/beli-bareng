@@ -15,9 +15,10 @@ export default function FormEdit(props) {
             value={props.name}
             onChange={e => props.setName(e.target.value)}
             type="text"
+            maxlength="15"
           />
           <Form.Text style={{ marginLeft: "3px" }} className="text-muted">
-            Edit Your Todo Such as Category, etc.
+            Edit Your Todo's Name Such as Category, etc. ( Max. 15 Character )
           </Form.Text>
         </Form.Group>
 
@@ -32,13 +33,13 @@ export default function FormEdit(props) {
             maxlength="150"
           />
           <Form.Text style={{ marginLeft: "3px" }} className="text-muted">
-            Max. 150 Character
+            Edit Your Todo's Description. ( Max. 150 Character )
           </Form.Text>
         </Form.Group>
         <Button
           onClick={props.onEditSubmit}
           style={{ height: "40px", fontSize: "20px", fontWeight: "500" }}
-          variant="warning"
+          variant="info"
           type="submit"
           size="sm"
           block

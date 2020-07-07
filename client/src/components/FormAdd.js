@@ -15,9 +15,10 @@ export default function FormAdd(props) {
             onChange={e => props.setName(e.target.value)}
             type="text"
             placeholder="Enter Todo's Name"
+            maxlength="15"
           />
           <Form.Text style={{ marginLeft: "3px" }} className="text-muted">
-            Input Your Todo Such as Category, etc.
+            Input Your Todo's Name Such as Category, etc. ( Max. 15 Character )
           </Form.Text>
         </Form.Group>
 
@@ -32,13 +33,13 @@ export default function FormAdd(props) {
             maxlength="150"
           />
           <Form.Text style={{ marginLeft: "3px" }} className="text-muted">
-            Max. 150 Character
+            Input Your Todo's Description. ( Max. 150 Character )
           </Form.Text>
         </Form.Group>
         <Button
           style={{ height: "40px", fontSize: "20px", fontWeight: "500" }}
           onClick={e => props.onAddSubmit(e)}
-          variant="warning"
+          variant="info"
           type="submit"
           size="sm"
           block

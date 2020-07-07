@@ -8,7 +8,7 @@ export default function Header() {
     <>
       <Navbar
         style={{
-          backgroundImage: "linear-gradient(to bottom right, #FB8C00, #FFF9C4)"
+          backgroundImage: "linear-gradient(to bottom right, #00838F, #B2EBF2)"
         }}
         variant="light"
       >
