@@ -1,6 +1,8 @@
+const url = "http://localhost:3001/todo";
+
 export const getTodos = () => {
   return dispatch => {
-    fetch("http://localhost:3001/todo")
+    fetch(`${url}`)
       .then(res => res.json())
       .then(todos => {
         dispatch({
@@ -13,7 +15,7 @@ export const getTodos = () => {
 
 export const addTodoAction = data => {
   return dispatch => {
-    fetch("http://localhost:3001/todo", {
+    fetch(`${url}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
@@ -30,7 +32,7 @@ export const addTodoAction = data => {
 
 export const editTodoAction = (data, id) => {
   return dispatch => {
-    fetch(`http://localhost:3001/todo/${id}`, {
+    fetch(`${url}/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
@@ -49,7 +51,7 @@ export const deleteTodo = id => {
   return (dispatch, getState) => {
     let target = getState().todoListReducer.todos;
     let temp = target.filter(e => e._id !== id);
-    fetch(`http://localhost:3001/todo/${id}`, { method: "DELETE" })
+    fetch(`${url}/${id}`, { method: "DELETE" })
       .then(res => res.json())
       .then(todos => {
         dispatch({

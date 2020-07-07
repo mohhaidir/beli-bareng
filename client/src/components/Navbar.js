@@ -12,7 +12,7 @@ export default function Header() {
         }}
         variant="light"
       >
-        <Navbar.Brand style={styles.text}>TODO</Navbar.Brand>
+        <Navbar.Brand style={styles.text}>TODO's App</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link>
             <Link to="/">
@@ -42,6 +42,6 @@ export default function Header() {
 const styles = {
   text: {
     fontFamily: "Fondamento",
-    fontSize: "40px"
+    fontSize: "30px"
   }
 };

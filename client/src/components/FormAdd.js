@@ -2,6 +2,14 @@ import React from "react";
 import { Form, Button } from "react-bootstrap";
 
 export default function FormAdd(props) {
+  let check = false;
+  if (
+    (!props.name && props.description) ||
+    (props.name && !props.description) ||
+    (!props.name && !props.description)
+  ) {
+    check = true;
+  }
   return (
     <div>
       {/* <div>FORM WILL SHOW HERE</div> */}
@@ -15,10 +23,10 @@ export default function FormAdd(props) {
             onChange={e => props.setName(e.target.value)}
             type="text"
             placeholder="Enter Todo's Name"
-            maxlength="15"
+            maxlength="17"
           />
           <Form.Text style={{ marginLeft: "3px" }} className="text-muted">
-            Input Your Todo's Name Such as Category, etc. ( Max. 15 Character )
+            Input Your Todo's Name Such as Category, etc. ( Max. 17 Character )
           </Form.Text>
         </Form.Group>
 
@@ -36,16 +44,30 @@ export default function FormAdd(props) {
             Input Your Todo's Description. ( Max. 150 Character )
           </Form.Text>
         </Form.Group>
-        <Button
-          style={{ height: "40px", fontSize: "20px", fontWeight: "500" }}
-          onClick={e => props.onAddSubmit(e)}
-          variant="info"
-          type="submit"
-          size="sm"
-          block
-        >
-          Submit
-        </Button>
+        {!check && (
+          <Button
+            style={{ height: "40px", fontSize: "20px", fontWeight: "500" }}
+            onClick={e => props.onAddSubmit(e)}
+            variant="info"
+            type="submit"
+            size="sm"
+            block
+          >
+            Submit
+          </Button>
+        )}
+        {check && (
+          <Button
+            style={{ height: "40px", fontSize: "20px", fontWeight: "500" }}
+            variant="info"
+            type="submit"
+            size="sm"
+            block
+            disabled
+          >
+            Submit
+          </Button>
+        )}
       </Form>
     </div>
   );

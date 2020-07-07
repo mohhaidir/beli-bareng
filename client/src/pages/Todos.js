@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Card } from "../components";
 import { useDispatch, useSelector } from "react-redux";
 import { getTodos } from "../store/action/action";
-import { confused } from "../assets/confused.gif";
+import notFound from "../assets/not-found.png";
 
 export default function Todos() {
   const dispatch = useDispatch();
@@ -20,18 +20,15 @@ export default function Todos() {
         <h1 style={styles.text}>Your Todos</h1>
       </div>
       <div style={styles.allCard}>
-        {todos.length !== 0 ? (
-          todos.map(e => {
-            return (
-              <div key={e._id}>
-                <Card todo={e} key={e._id} />
-              </div>
-            );
-          })
-        ) : (
-          <div style={styles.load}>
-            <img style={styles.object} src={confused} alt="loading..." />
-          </div>
+        {todos.map(e => {
+          return (
+            <div key={e._id}>
+              <Card todo={e} key={e._id} />
+            </div>
+          );
+        })}
+        {todos.length === 0 && (
+          <img style={styles.object} src={notFound} alt="none..." />
         )}
       </div>
     </div>
@@ -47,15 +44,10 @@ const styles = {
     flexWrap: "wrap",
     margin: "20px"
   },
-  load: {
-    justifyContent: "center",
-    width: "70px",
-    margin: "300px",
-    marginLeft: "210%"
-  },
   object: {
-    width: "170%",
-    height: "170%"
+    width: "12%",
+    height: "12%",
+    marginTop: "10%"
   },
   title: {
     textAlign: "center",

@@ -19,7 +19,7 @@ export default function AddTodo() {
       };
       dispatch(addTodoAction(dataInput));
       history.push("/todos");
-      swal("Success!", "", "success");
+      swal("Success", "One todo has been added!", "success");
     } else {
       swal({
         title: "Nah!",

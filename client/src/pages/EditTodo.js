@@ -28,7 +28,7 @@ export default function EditTodo() {
         description
       };
       dispatch(editTodoAction(newData, id));
-      swal("Success!", "", "success");
+      swal("Success", "Edit todo is done!", "success");
       history.push("/todos");
     } else {
       swal({
