@@ -26,7 +26,8 @@ export default function FormAdd(props) {
             maxlength="17"
           />
           <Form.Text style={{ marginLeft: "3px" }} className="text-muted">
-            Input Your Todo's Name Such as Category, etc. ( Max. 17 Character )
+            Required Your Todo's Name Such as Category, etc. ( Max. 17 Character
+            )
           </Form.Text>
         </Form.Group>
 
@@ -41,7 +42,7 @@ export default function FormAdd(props) {
             maxlength="150"
           />
           <Form.Text style={{ marginLeft: "3px" }} className="text-muted">
-            Input Your Todo's Description. ( Max. 150 Character )
+            Required Your Todo's Description. ( Max. 150 Character )
           </Form.Text>
         </Form.Group>
         {!check && (

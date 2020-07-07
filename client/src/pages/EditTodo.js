@@ -22,21 +22,13 @@ export default function EditTodo() {
   }, []);
 
   const onEditSubmit = () => {
-    if (name && description) {
-      const newData = {
-        name,
-        description
-      };
-      dispatch(editTodoAction(newData, id));
-      swal("Success", "Edit todo is done!", "success");
-      history.push("/todos");
-    } else {
-      swal({
-        title: "Nah!",
-        text: "All field cannot be empty!",
-        icon: "warning"
-      });
-    }
+    const newData = {
+      name,
+      description
+    };
+    dispatch(editTodoAction(newData, id));
+    swal("Success", "Edit todo is done!", "success");
+    history.push("/todos");
   };
 
   return (

@@ -12,21 +12,13 @@ export default function AddTodo() {
   const history = useHistory();
 
   const onAddSubmit = e => {
-    if (name && description) {
-      const dataInput = {
-        name,
-        description
-      };
-      dispatch(addTodoAction(dataInput));
-      history.push("/todos");
-      swal("Success", "One todo has been added!", "success");
-    } else {
-      swal({
-        title: "Nah!",
-        text: "All field cannot be empty!",
-        icon: "warning"
-      });
-    }
+    const dataInput = {
+      name,
+      description
+    };
+    dispatch(addTodoAction(dataInput));
+    history.push("/todos");
+    swal("Success", "One todo has been added!", "success");
   };
 
   return (
