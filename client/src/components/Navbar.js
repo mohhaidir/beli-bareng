@@ -19,17 +19,17 @@ export default function Header() {
         <Nav className="mr-auto"></Nav>
         <Nav>
           <Nav.Link>
-            <Link to="/">
+            <Link to="/" data-testid="home-btn">
               <Button variant="outline-dark">Home</Button>
             </Link>
           </Nav.Link>
           <Nav.Link>
-            <Link to="/todos">
+            <Link to="/todos" data-testid="todos-btn">
               <Button variant="outline-dark">Todos</Button>
             </Link>
           </Nav.Link>
           <Nav.Link>
-            <Link to="/addTodo">
+            <Link to="/addTodo" data-testid="add-todo-btn">
               <Button variant="outline-dark">Add More Todo</Button>
             </Link>
           </Nav.Link>

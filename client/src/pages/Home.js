@@ -3,7 +3,7 @@ import homePic from "../assets/home-pic.png";
 
 export default function Home() {
   return (
-    <div>
+    <div data-testid="home-page">
       <img style={styles.pic} src={homePic} alt="none..." />
       <div style={styles.title}>
         <h1 style={styles.text}>Welcome To Todo List App</h1>

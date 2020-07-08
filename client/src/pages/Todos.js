@@ -13,7 +13,7 @@ export default function Todos() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div data-testid="todos-page">
       {/* <h1>home will show card with all todo list</h1> */}
       {/* {<div>{JSON.stringify(todos)}</div>} */}
       <div style={styles.title}>
