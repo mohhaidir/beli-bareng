@@ -1,4 +1,4 @@
-const url = "http://localhost:3001/todo";
+const url = "https://fast-wave-81961.herokuapp.com/todo";
 
 export const getTodos = () => {
   return dispatch => {

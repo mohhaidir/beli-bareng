@@ -9,15 +9,18 @@
 ```
 https://documenter.getpostman.com/view/10460198/T17Ggo9b
 ```
+
 [Go To Documentation](https://documenter.getpostman.com/view/10460198/T17Ggo9b)
 
-### Link to Access Firebase for Client
-
-```
----
-```
-
 ### Link for Heroku Server
+
+```
+https://fast-wave-81961.herokuapp.com/todo
+```
+
+[Go To API](https://fast-wave-81961.herokuapp.com/todo)
+
+### Link to Access Firebase for Client
 
 ```
 ---

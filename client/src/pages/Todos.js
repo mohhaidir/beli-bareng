@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Card } from "../components";
 import { useDispatch, useSelector } from "react-redux";
 import { getTodos } from "../store/action/action";
-import notFound from "../assets/not-found.png";
+import loading from "../assets/loading.gif";
 
 export default function Todos() {
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ export default function Todos() {
           );
         })}
         {todos.length === 0 && (
-          <img style={styles.object} src={notFound} alt="none..." />
+          <img style={styles.object} src={loading} alt="none..." />
         )}
       </div>
     </div>
@@ -41,8 +41,7 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     position: "relative",
-    flexWrap: "wrap",
-    margin: "20px"
+    flexWrap: "wrap"
   },
   object: {
     width: "12%",

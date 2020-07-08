@@ -13,7 +13,7 @@ export default function EditTodo() {
   const history = useHistory();
 
   useEffect(() => {
-    fetch(`http://localhost:3001/todo/${id}`)
+    fetch(`https://fast-wave-81961.herokuapp.com/todo/${id}`)
       .then(result => result.json())
       .then(res => {
         setEditName(res.name);
