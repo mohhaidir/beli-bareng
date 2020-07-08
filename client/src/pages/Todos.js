@@ -14,8 +14,6 @@ export default function Todos() {
 
   return (
     <div data-testid="todos-page">
-      {/* <h1>home will show card with all todo list</h1> */}
-      {/* {<div>{JSON.stringify(todos)}</div>} */}
       <div style={styles.title}>
         <h1 style={styles.text}>Your Todos</h1>
       </div>

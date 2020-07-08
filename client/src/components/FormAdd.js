@@ -12,7 +12,6 @@ export default function FormAdd(props) {
   }
   return (
     <div>
-      {/* <div>FORM WILL SHOW HERE</div> */}
       <div style={styles.title}>
         <h1 style={styles.text}>Add Todo</h1>
       </div>
