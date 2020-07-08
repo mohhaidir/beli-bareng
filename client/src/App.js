@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import store from "./store";
-import { Header } from "./components";
+import { Navbar } from "./components";
 import { Todos, Home, AddTodo, EditTodo } from "./pages";
 
 const routes = [
@@ -38,7 +38,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <Header />
+        <Navbar />
         <Switch>
           {routes.map(route => (
             <Route key={route} {...route} />
