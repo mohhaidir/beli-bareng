@@ -1,6 +1,6 @@
 # TODO's App
 
-#### \* Unit Test on Client Side
+#### Unit Test on Client Side
 
 ![Testing](https://i.imgur.com/5xOnDEK.png)
 
@@ -23,5 +23,7 @@ https://fast-wave-81961.herokuapp.com/todo
 ### Link to Access Firebase for Client
 
 ```
----
+https://todo-app-73a08.web.app
 ```
+
+[Go To App](https://todo-app-73a08.web.app)
